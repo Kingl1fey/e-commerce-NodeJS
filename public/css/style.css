@@ -1,0 +1,10 @@
+body {
+    background: linear-gradient(#9198e5, lime, yellow);
+    background-repeat: no-repeat;
+
+}
+
+#container {
+    background: linear-gradient(lime, #9198e5, red, pink);
+    background-repeat: no-repeat;
+}
