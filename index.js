@@ -7,8 +7,8 @@ const chalk = require('chalk')
 const bodyParser = require('body-parser')
 
 
-const mongoose = require('mongoose')
 var session = require('express-session')
+const mongoose = require('mongoose')
 mongoose.connect(
     config.mongodbConnectionString, {
         useNewUrlParser: true,
@@ -45,9 +45,11 @@ app.use(flash());
 // permet de renvoyer les sessions à la vue
 app.use((req, res, next) => {
     res.locals.session = req.session;
-    console.log(res.locals.session);
+    // console.log(res.locals.session);
     next();
 });
+require('./app/passport')(app)
+
 
 require("./app/routes.js")(app)
 

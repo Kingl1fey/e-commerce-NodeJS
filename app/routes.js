@@ -1,3 +1,4 @@
+const passport = require('passport')
 module.exports = (app) => {
 
     app.get('/', (req, res) => {
@@ -34,4 +35,16 @@ module.exports = (app) => {
         // console.log(req.session.user)
         Home.print(req, res)
     })
+    app.get('/connexion/google',
+        passport.authenticate('google', {
+            scope: ['profile']
+        })
+    )
+    // la page de callback
+    app.get('/connexion/google/callback',
+        passport.authenticate('google', {
+            successRedirect: '/',
+            failureRedirect: '/connexion'
+        })
+    );
 }

@@ -9,35 +9,35 @@ html(lang="fr")
         link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous")
 
     body
-        #container
-            h1 Connexion !!!
-            br
-            br
-        
-            if messages.info
-                .alert.alert-danger(role="alert")
-                    strong #{messages.info}
   
-            form(action="/connexion", method="post")
-               
-                .form-group
-                    label(for="email") Email
-                    input#email.form-control(type="email" aria-describedby="emailHelp" placeholder="Entrez votre Email" name="email")
-               
-                .form-group
-                    label(for="password") Mot de Passe
-                    input#password.form-control(type="password" placeholder="Entrez votre Mot de passe" name="password")
+        h1 Connexion !!!
+        br
+        br
+    
+        if messages.info
+            .alert.alert-danger(role="alert")
+                strong #{messages.info}
+
+        form(action="/connexion", method="post")
             
-                br
-                
-                button.btn.btn-primary(type="submit") Se connecter
-                br
-                br
-               
-                a(href="/register") S'inscrire
-                br
-                a(href="/") Retour à l'Accueil
+            .form-group
+                label(for="email") Email
+                input#email.form-control(type="email" aria-describedby="emailHelp" placeholder="Entrez votre Email" name="email")
+            
+            .form-group
+                label(for="password") Mot de Passe
+                input#password.form-control(type="password" placeholder="Entrez votre Mot de passe" name="password")
         
+            br
+            
+            button.btn.btn-primary(type="submit") Se connecter
+            br
+            br
+            .btn-group.mr-2(role="group" aria-label="First group")
+                a.btn.btn-info(href="/register") S'inscrire
+            .btn-group.mr-2(role="group" aria-label="First group")
+                a.btn.btn-dark(href="/") Retour à l'Accueil
+    
         
 
 

@@ -1,10 +1,23 @@
 body {
-    background: linear-gradient(#9198e5, lime, yellow);
-    background-repeat: no-repeat;
-
+    /* background: linear-gradient(#9198e5, lime, yellow); */
+    background-image: url('https://3.bp.blogspot.com/-JdoTQaaWUqA/VsiN19T40DI/AAAAAAAAfAE/ugesBh88LyQ/w1200-h630-p-k-no-nu/femme-shopping.png');
+    background-size: cover;
+    background-attachment: fixed;
 }
 
-#container {
-    background: linear-gradient(lime, #9198e5, red, pink);
-    background-repeat: no-repeat;
+.pics {
+    width: 90%;
+    text-align: center;
+    margin: auto;
+    object-fit: cover;
+}
+
+#carouselExampleCaptions {
+    margin-top: 5%;
+}
+
+.btn-toolbar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
 }

@@ -9,48 +9,50 @@ html(lang="fr")
         link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous")
 
     body
-        #container
-            h1 Inscription !!!
-            br
-            br
+     
+        h1 Inscription !!!
+        br
+        br
+    
+        if messages.info
+            .alert.alert-danger(role="alert")
+                strong #{messages.info}
+
+        form(action="/register", method="post")
+            .form-group    
+                p
+                |   civilite:
+                select(name="civility")
+                    option( value="F") Madame
+                    option(value="H") Monsieur
+            .form-group
+                label(for="email") Email
+                input#email.form-control(type="email" aria-describedby="emailHelp" placeholder="Entrez votre Email" name="email")
+            .form-group
+                label(for="lastName") Nom
+                input#lastName.form-control(type="text" placeholder="Entrez votre Nom" name="lastName")
+            .form-group
+                label(for="firstName") Prénom
+                input#firstName.form-control(type="text" placeholder="Entrez votre Prénom" name="firstName")
+            .form-group
+                label(for="password") Mot de Passe
+                input#password.form-control(type="password" placeholder="Entrez votre Mot de passe" name="password")
         
-            if messages.info
-                .alert.alert-danger(role="alert")
-                    strong #{messages.info}
-  
-            form(action="/register", method="post")
-                .form-group    
-                    p
-                    |   civilite:
-                    select(name="civility")
-                        option( value="F") Madame
-                        option(value="H") Monsieur
-                .form-group
-                    label(for="email") Email
-                    input#email.form-control(type="email" aria-describedby="emailHelp" placeholder="Entrez votre Email" name="email")
-                .form-group
-                    label(for="lastName") Nom
-                    input#lastName.form-control(type="text" placeholder="Entrez votre Nom" name="lastName")
-                .form-group
-                    label(for="firstName") Prénom
-                    input#firstName.form-control(type="text" placeholder="Entrez votre Prénom" name="firstName")
-                .form-group
-                    label(for="password") Mot de Passe
-                    input#password.form-control(type="password" placeholder="Entrez votre Mot de passe" name="password")
+            .form-group
+                label(for="password2") Confirmation du Mot de passe
+                input#password2.form-control(type="password" placeholder="Confirmation" name="password2")
+            br
             
-                .form-group
-                    label(for="password2") Confirmation du Mot de passe
-                    input#password2.form-control(type="password" placeholder="Confirmation" name="password2")
-                br
-                
-                button.btn.btn-primary(type="submit") S'inscrire
-                br
-                br
-                a(href="/") Retour à l'Accueil
-                br 
-                a(href="/connexion") Connexion
-        
-        
+            button.btn.btn-primary(type="submit") S'inscrire
+            br
+            br
+            .btn-group.mr-2(role="group" aria-label="First group") 
+                a.btn.btn-info(href="/connexion") Connexion
+            .btn-group.mr-2(role="group" aria-label="First group")
+                a.btn.btn-dark(href="/") Retour à l'Accueil
+            
+    
+    
 
 
         script(src=process.env.BROWSER_REFRESH_URL)
